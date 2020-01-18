@@ -7,6 +7,6 @@
 [submodule "front"]
 	path = front
 	url = git@github.com:silent-admin/front.git
-[submodule "runner"]
-	path = runner
-	url = git@github.com:silent-admin/runner.git
+[submodule "users"]
+	path = users
+	url = git@github.com:silent-admin/users.git
