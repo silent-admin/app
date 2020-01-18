@@ -1,12 +1,12 @@
-[submodule "orders"]
-	path = orders
-	url = git@github.com:silent-admin/orders.git
-[submodule "products"]
-	path = products
-	url = git@github.com:silent-admin/products.git
-[submodule "front"]
-	path = front
-	url = git@github.com:silent-admin/front.git
-[submodule "users"]
-	path = users
-	url = git@github.com:silent-admin/users.git
+# [submodule "orders"]
+# 	path = orders
+# 	url = git@github.com:silent-admin/orders.git
+# [submodule "products"]
+# 	path = products
+# 	url = git@github.com:silent-admin/products.git
+# [submodule "front"]
+# 	path = front
+# 	url = git@github.com:silent-admin/front.git
+# [submodule "users"]
+# 	path = users
+# 	url = git@github.com:silent-admin/users.git

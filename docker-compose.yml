@@ -18,7 +18,7 @@ services:
       context: ./products
       dockerfile: ./dev.dockerfile
     volumes:
-      - '.:/app'
+      - '.:/products'
     ports:
       - "${products_port}:3000"
   orders:
@@ -28,7 +28,7 @@ services:
       context: ./orders
       dockerfile: ./dev.dockerfile
     volumes:
-      - '.:/app'
+      - '.:/orders'
     ports:
       - "${orders_port}:3000"
   users:
@@ -38,6 +38,6 @@ services:
       context: ./users
       dockerfile: ./dev.dockerfile
     volumes:
-      - '.:/app'
+      - '.:/users'
     ports:
       - "${users_port}:3000"
