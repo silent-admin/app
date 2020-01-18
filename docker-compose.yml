@@ -1,11 +1,43 @@
 version: '3.3'
 
 services:
-  my-app:
+  frontend:
+    env_file:
+      - .env
     build:
       context: ./front
       dockerfile: ./dev.dockerfile
     volumes:
       - '.:/app'
     ports:
-      - '8080:8080'
+      - "${front_port}:8080"
+  products:
+    env_file:
+      - .env
+    build:
+      context: ./products
+      dockerfile: ./dev.dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - "${products_port}:3000"
+  orders:
+    env_file:
+      - .env
+    build:
+      context: ./orders
+      dockerfile: ./dev.dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - "${orders_port}:3000"
+  users:
+    env_file:
+      - .env
+    build:
+      context: ./users
+      dockerfile: ./dev.dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - "${users_port}:3000"
