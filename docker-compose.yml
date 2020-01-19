@@ -16,12 +16,12 @@ services:
     build:
       context: ./products
       dockerfile: ./dev.dockerfile
-    command: bash -c "bundle install && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "bundle install && bundle exec rails s -p ${products_port} -b '0.0.0.0'"
     volumes:
       - gems:/usr/local/bundle
       - './products:/app'
     ports:
-      - "${products_port}:3000"
+      - "${products_port}:${products_port}"
   #
   orders:
     env_file:
@@ -29,12 +29,12 @@ services:
     build:
       context: ./orders
       dockerfile: ./dev.dockerfile
-    command: bash -c "bundle install && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "bundle install && bundle exec rails s -p ${orders_port} -b '0.0.0.0'"
     volumes:
       - gems:/usr/local/bundle
       - './orders:/app'
     ports:
-      - "${orders_port}:3000"
+      - "${orders_port}:${orders_port}"
   #
   users:
     env_file:
@@ -42,12 +42,12 @@ services:
     build:
       context: users
       dockerfile: ./dev.dockerfile
-    command: bash -c "bundle install && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "bundle install && bundle exec rails s -p ${users_port} -b '0.0.0.0'"
     volumes:
       - gems:/usr/local/bundle
       - './users:/app'
     ports:
-      - "${users_port}:3000"
+      - "${users_port}:${users_port}"
 #
 volumes:
   gems:
